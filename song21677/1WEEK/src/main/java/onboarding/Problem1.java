@@ -9,7 +9,9 @@ class Problem1 {
         int pobiMax = findMax(pobi);
         int crongMax = findMax(crong);
 
-        return 0;
+        if (pobiMax == crongMax) return 0;
+        else if (pobiMax > crongMax) return 1;
+        else return 2;
     }
 
     public static boolean verifyInput(List<Integer> pobi, List<Integer> crong) {
