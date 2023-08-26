@@ -2,9 +2,9 @@ package Week1.onboarding;
 
 import java.util.List;
 
-public class Problem1 {
-    Validation validation= new Validation();
-    PlayGame playGame = new PlayGame();
+class Problem1 {
+    static Validation validation= new Validation();
+    static PlayGame playGame = new PlayGame();
 
     public int solution(List<Integer> Crong, List<Integer> Pobi){
         if(validation.check(Crong) && validation.check(Pobi)){
