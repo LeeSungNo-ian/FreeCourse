@@ -10,7 +10,9 @@ public class Problem1 {
 
     public int solution(List<Integer> Crong, List<Integer> Pobi){
         if(validation(Crong) && validation(Pobi)){
-
+            return playGame.battle(Crong, Pobi);
+        }else{
+            return -1;
         }
     }
 
@@ -48,7 +50,7 @@ public class Problem1 {
     }
 
     static class PlayGame{ ;
-        public int Battle(List<Integer> Crong, List<Integer> Pobi){
+        public int battle(List<Integer> Crong, List<Integer> Pobi){
             int crongPoint =  calculateMaxPoint(Crong);
             int pobiPoint = calculateMaxPoint(Pobi);
 
