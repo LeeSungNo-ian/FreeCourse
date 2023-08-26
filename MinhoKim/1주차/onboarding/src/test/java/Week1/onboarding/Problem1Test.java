@@ -11,12 +11,19 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Problem1Test {
     @Test
-    public void ValidationCheck(){
+    public void ValidationTest(){
         List<Integer> Player = Arrays.asList(null, 80);
         boolean result = false;
         assertThat(Problem1.validation.check(Player)).isEqualTo(result);
     }
 
     @Test
+    public void PlayGameBattleTest(){ // Pobi 가 승리하는 경우
+        List<Integer> Crong = Arrays.asList(97, 98);
+        List<Integer> Pobi = Arrays.asList(197, 198);
 
+        int result = 1;
+
+        assertThat(Problem1.playGame.battle(Crong, Pobi)).isEqualTo(result);
+    }
 }
