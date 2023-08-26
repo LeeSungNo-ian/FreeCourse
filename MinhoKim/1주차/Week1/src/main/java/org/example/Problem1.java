@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class Problem1 {
 
@@ -9,7 +10,7 @@ public class Problem1 {
     PlayGame playGame = new PlayGame();
 
     public int solution(List<Integer> Crong, List<Integer> Pobi){
-        if(validation(Crong) && validation(Pobi)){
+        if(validation.check(Crong) && validation.check(Pobi)){
             return playGame.battle(Crong, Pobi);
         }else{
             return -1;
@@ -19,8 +20,8 @@ public class Problem1 {
     // 외부 클래스를 참조할 일이 없으면 내부 클래스는 static 선언을 하자.
     // Inner class
     static class Validation {
-        private final START_PAGE = 0;
-        private final END_PAGE = 400;
+        private final int START_PAGE = 0;
+        private final int END_PAGE = 400;
 
         public boolean check(List<Integer> PlayerPages){
             return checkIfOdd(PlayerPages.get(0)) && checkIfOdd(PlayerPages.get(1)) && pageExistCheck(PlayerPages);
@@ -33,7 +34,7 @@ public class Problem1 {
             return false;
         }
 
-        public booleadn checkIfEven(int page){
+        public boolean checkIfEven(int page){
             if(page % 2 == 0)
                 return true;
 
