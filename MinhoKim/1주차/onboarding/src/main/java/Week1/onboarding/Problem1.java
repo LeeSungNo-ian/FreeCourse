@@ -21,7 +21,7 @@ class Problem1 {
         private final int END_PAGE = 400;
 
         public boolean check(List<Integer> PlayerPages){
-            return checkIfNotNull(PlayerPages) && checkIfOdd(PlayerPages.get(0)) && checkIfOdd(PlayerPages.get(1)) && pageExistCheck(PlayerPages);
+            return checkIfNotNull(PlayerPages) && checkIfOdd(PlayerPages.get(0)) && checkIfEven(PlayerPages.get(1)) && pageExistCheck(PlayerPages);
         }
 
         public boolean checkIfNotNull(List<Integer> PlayerPages){

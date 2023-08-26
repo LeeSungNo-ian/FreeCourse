@@ -16,4 +16,7 @@ public class Problem1Test {
         boolean result = false;
         assertThat(Problem1.validation.check(Player)).isEqualTo(result);
     }
+
+    @Test
+
 }
