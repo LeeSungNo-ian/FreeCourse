@@ -9,11 +9,11 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-//public class Problem1Test {
-//    @Test
-//    public void ValidationCheck(){
-//        List<Integer> Player = Arrays.asList(null, 80);
-//        boolean result = false;
-//        assertThat(Problem1.validation.check(Player)).isEqualTo(result);
-//    }
-//}
+public class Problem1Test {
+    @Test
+    public void ValidationCheck(){
+        List<Integer> Player = Arrays.asList(null, 80);
+        boolean result = false;
+        assertThat(Problem1.validation.check(Player)).isEqualTo(result);
+    }
+}
