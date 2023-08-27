@@ -1,6 +1,12 @@
 package onboarding;
 
 public class Problem3 {
+    static int sum = 0;
+    static int game369(int curr, int number) {
+        if (curr == number+1) return sum;
+        sum += clap(curr);
+        return game369(curr+1, number);
+    }
     static int clap(int curr) {
         int clap = 0;
         String cur = String.valueOf(curr);
