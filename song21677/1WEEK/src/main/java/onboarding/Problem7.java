@@ -97,4 +97,26 @@ public class Problem7 {
 
     }
 
+    static class Id {
+        String id;
+
+        public Id(String idValue) {
+            // 1 이상 30 이하인 문자열이며 소문자로만 이루어져 있다.
+            if (!Pattern.matches("^[a-z]{1,29}$", idValue)) throw new RuntimeException("아이디는 1 이상 30 이하인 문자열이며 소문자로만 이루어져야 합니다.");
+            id = idValue;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Id)) return false;
+            Id id1 = (Id) o;
+            return Objects.equals(id, id1.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id);
+        }
+    }
 }
