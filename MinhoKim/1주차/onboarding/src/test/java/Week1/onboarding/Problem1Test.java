@@ -26,4 +26,12 @@ public class Problem1Test {
 
         assertThat(Problem1.playGame.battle(Crong, Pobi)).isEqualTo(result);
     }
+
+    @Test
+    public void solutionTest(){
+        List<Integer> pobi = List.of(97, 98);
+        List<Integer> crong = List.of(197, 198);
+        int result = 1;
+        assertThat(Problem1.solution(pobi, crong)).isEqualTo(result);
+    }
 }
