@@ -18,13 +18,13 @@ public class Problem6 {
                 Email email = new Email(form.get(0));
                 user.add(new User6(nickname, email));
             } catch (RuntimeException e) {
-                // 입력값 형식이 맞지 않을 때, 중복된 닉네임이 있을 때 사용자에 추가되지 않았을 때 answer에 넣는다.
+                // 입력값 형식이 맞지 않을 때, 중복된 닉네임이 있을 때 사용자에 추가되지 않았을 때 answer에 넣습니다.
                 answer.add(form.get(0));
             }
         }
 
         // 중복된 닉네임을 가지고 있었지만 자신이 추가될 땐 중복된 값이 없었기에 user에 추가되었고
-        // 따라서 해당 값을 user에서 가져와 answer에 담는 작업이다.
+        // 따라서 해당 값을 user에서 가져와 answer에 담는 작업입니다.
         for (User6 User6 : User6.duplicateUser6) {
             Email User6Email = User6.email;
             answer.add(User6Email.email);
@@ -37,4 +37,16 @@ public class Problem6 {
         answer =new ArrayList<String>(set);
         return answer;
     }
+    static class User6 {
+        static List<User6> duplicateUser6 = new ArrayList<>();
+        Nickname nickname;
+        Email email;
+
+        public User6(Nickname nickname, Email email) {
+            this.nickname = nickname;
+            this.email = email;
+        }
+    }
+
 }
+
