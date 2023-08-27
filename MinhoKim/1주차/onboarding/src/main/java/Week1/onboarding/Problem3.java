@@ -17,7 +17,7 @@ public class Problem3 {
                     if(digit == 3 || digit == 6 || digit == 9){
                         result++;
                     }
-                    digit /= 10;
+                    temp_number /= 10;
                 }
             }
             return result;
