@@ -8,7 +8,7 @@ public class Problem2 {
     static Code code = new Code();
     static Validation validation = new Validation();
 
-    public String solution(String cryptogram){
+    public static String solution(String cryptogram){
         if(validation.isNotNull(cryptogram)){
             return code.decode(cryptogram);
         }

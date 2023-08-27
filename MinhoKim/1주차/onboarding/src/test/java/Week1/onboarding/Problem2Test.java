@@ -12,4 +12,18 @@ public class Problem2Test {
         String result = "brown";
         assertThat(Problem2.Code.decode(cryptogram)).isEqualTo(result);
     }
+
+    @Test
+    public void solutionTest(){
+        String cryptogram = "browoanoommnaon";
+        String result = "brown";
+        assertThat(Problem2.solution(cryptogram)).isEqualTo(result);
+    }
+
+    @Test
+    public void solutionTestifNull(){
+        String cryptogram = "";
+        String result = "cryptogram is empty";
+        assertThat(Problem2.solution(cryptogram)).isEqualTo(result);
+    }
 }
