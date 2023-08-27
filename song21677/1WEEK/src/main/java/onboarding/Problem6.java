@@ -47,6 +47,51 @@ public class Problem6 {
             this.email = email;
         }
     }
+    static class Nickname {
+        String nickname;
 
+        public Nickname(String nicknameValue) throws RuntimeException {
+            validate(nicknameValue);
+            checkDuplicate(nicknameValue);
+            nickname = nicknameValue;
+        }
+
+        private void validate(String nicknameValue) {
+            if (!Pattern.matches("^[가-힣]{1,19}$", nicknameValue)) {
+                throw new RuntimeException("닉네임은 한글만 가능하고 전체 길이는 1자 이상 20자 미만이어야 합니다.");
+            }
+        }
+
+        private void checkDuplicate(String nicknameValue) {
+            for (Problem6.User6 User6 : Problem6.user) {
+                if (isDuplicate(User6.nickname, nicknameValue)) {
+                    User6.duplicateUser6.add(User6);
+                    throw new RuntimeException("닉네임이 중복되었습니다.");
+                }
+            }
+        }
+
+        private boolean isDuplicate(Nickname User6Nickname, String nickname) {
+            String storedNickname = User6Nickname.nickname;
+
+            int storedNickPointer = 0;
+            int nickPointer = 0;
+            boolean isSamePreChar = false;
+
+            while (nickPointer < nickname.length()) {
+                if (storedNickname.charAt(storedNickPointer) == nickname.charAt(nickPointer)) {
+                    if (isSamePreChar) return true;
+
+                    isSamePreChar = true;
+                    storedNickPointer++;
+                    nickPointer++;
+                } else {
+                    isSamePreChar = false;
+                    nickPointer++;
+                }
+            }
+            return false;
+        }
+    }
 }
 
