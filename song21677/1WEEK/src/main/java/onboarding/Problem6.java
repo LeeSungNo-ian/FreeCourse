@@ -63,7 +63,7 @@ public class Problem6 {
         }
 
         private void checkDuplicate(String nicknameValue) {
-            for (Problem6.User6 User6 : Problem6.user) {
+            for (User6 User6 : Problem6.user) {
                 if (isDuplicate(User6.nickname, nicknameValue)) {
                     User6.duplicateUser6.add(User6);
                     throw new RuntimeException("닉네임이 중복되었습니다.");
@@ -93,5 +93,21 @@ public class Problem6 {
             return false;
         }
     }
+
+    static class Email {
+        String email;
+
+        public Email(String emailValue) throws RuntimeException {
+            validate(emailValue);
+            email = emailValue;
+        }
+
+        private void validate(String emailValue) {
+            if (!Pattern.matches("^[A-Za-z]{1,8}@email.com", emailValue)) {
+                throw new RuntimeException("이메일은 이메일 형식에 부합하며 11자 이상 20자 미만이어야 합니다.");
+            }
+        }
+    }
+
 }
 
