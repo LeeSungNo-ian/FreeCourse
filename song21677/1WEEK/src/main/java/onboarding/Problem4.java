@@ -1,8 +1,11 @@
 package onboarding;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Problem4 {
-    public static String solution(String word) {
-        String answer = "";
-        return answer;
+    private static boolean verifySize(String word) {
+        return 1 <= word.length() && word.length() <= 1000;
     }
+
 }
