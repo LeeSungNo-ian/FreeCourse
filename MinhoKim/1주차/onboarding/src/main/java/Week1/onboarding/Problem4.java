@@ -23,15 +23,15 @@ public class Problem4 {
             return str.toString();
         }
 
-        private boolean isLowerCase(char word){
-            if(word >= 'A' && word <= 'Z')
+        public static boolean isLowerCase(char word){
+            if(word >= 'a' && word <= 'z')
                 return true;
 
             return false;
         }
 
-        private boolean isUpperCase(char word){
-            if(word >= 'a' && word <= 'z')
+        public static boolean isUpperCase(char word){
+            if(word >= 'A' && word <= 'Z')
                 return true;
 
             return false;
