@@ -129,4 +129,17 @@ public class Problem7 {
             this.score = score;
         }
     }
+
+    static class UserRepository {
+        Map<Id, User7> store = new HashMap<>();
+
+        User7 save(User7 user) {
+            store.put(user.id, user);
+            return user;
+        }
+
+        Optional<User7> findById(Id id) {
+            return Optional.ofNullable(store.get(id));
+        }
+    }
 }
