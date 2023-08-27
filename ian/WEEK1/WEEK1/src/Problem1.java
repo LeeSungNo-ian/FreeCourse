@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Problem1 {
     static class Calculator {
         public static int plus(int page) {
@@ -48,6 +50,13 @@ public class Problem1 {
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int pobiPageNumber = sc.nextInt();
+        int crongPageNumber = sc.nextInt();
 
+        int pobiPoint = Comparison.compareLeftRightValue(pobiPageNumber);
+        int crongPoint = Comparison.compareLeftRightValue(crongPageNumber);
+
+        System.out.println(Result.resultPobiCrongValues(pobiPoint, crongPoint));
     }
 }
