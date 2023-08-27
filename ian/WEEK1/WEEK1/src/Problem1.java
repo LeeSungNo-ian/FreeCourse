@@ -20,7 +20,7 @@ public class Problem1 {
     }
 
     static class Comparison {
-        public static int compareValue(int page) {
+        public static int compareLeftRightValue(int page) {
             int compareLeftPageValue = Math.max(Calculator.plus(page), Calculator.multiply(page));
             int compareRightPageValue = Math.max(Calculator.plus(page + 1), Calculator.multiply(page + 1));
 
@@ -36,13 +36,13 @@ public class Problem1 {
 
         public static int resultPobiCrongValues(int pobiValue, int crongValue) {
             if (pobiValue > crongValue) {
-                return POBI_WIN
+                return POBI_WIN;
             } else if (pobiValue < crongValue) {
-                return CRONG_WIN
+                return CRONG_WIN;
             } else if (pobiValue == crongValue) {
-                return DRAW
+                return DRAW;
             } else {
-                return EXCEPTION
+                return EXCEPTION;
             }
         }
     }
