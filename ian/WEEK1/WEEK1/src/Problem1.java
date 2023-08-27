@@ -18,6 +18,16 @@ public class Problem1 {
             return result;
         }
     }
+
+    static class Comparison {
+        public static int compareValue(int page) {
+            int compareLeftPageValue = Math.max(Calculator.plus(page), Calculator.multiply(page));
+            int compareRightPageValue = Math.max(Calculator.plus(page + 1), Calculator.multiply(page + 1));
+
+            return Math.max(compareLeftPageValue, compareRightPageValue);
+        }
+    }
+
     public static void main(String[] args) {
 
     }
