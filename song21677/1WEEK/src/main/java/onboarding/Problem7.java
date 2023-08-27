@@ -82,4 +82,19 @@ public class Problem7 {
         return result.get();
     }
 
+    static class User7 {
+        Id id;
+        List<User7> friends = new ArrayList<>();
+        Map<Id, Recommendation> recommendationList = new HashMap<>();
+
+        public User7(Id idValue) {
+            id = idValue;
+        }
+
+        public void addFriend(User7 friend) {
+            friends.add(friend);
+        }
+
+    }
+
 }
