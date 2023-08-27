@@ -4,7 +4,8 @@ public class Problem3 {
         for (int i = 1; i <= number; i++) {
             int currentNumber = i;
             while (currentNumber > 0) {
-                if (currentNumber % 10 == 3 || currentNumber % 10 == 6 || currentNumber % 10 == 9) {
+                int currentDigit = currentNumber % 10;
+                if (currentDigit == 3 || currentDigit == 6 || currentDigit == 9) {
                     clapCount ++;
                 }
                 currentNumber /= 10;
