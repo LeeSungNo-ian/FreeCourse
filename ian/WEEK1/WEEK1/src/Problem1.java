@@ -28,6 +28,25 @@ public class Problem1 {
         }
     }
 
+    static class Result {
+        static final int POBI_WIN = 1;
+        static final int CRONG_WIN = 2;
+        static final int DRAW = 0;
+        static final int EXCEPTION = -1;
+
+        public static int resultPobiCrongValues(int pobiValue, int crongValue) {
+            if (pobiValue > crongValue) {
+                return POBI_WIN
+            } else if (pobiValue < crongValue) {
+                return CRONG_WIN
+            } else if (pobiValue == crongValue) {
+                return DRAW
+            } else {
+                return EXCEPTION
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
     }
