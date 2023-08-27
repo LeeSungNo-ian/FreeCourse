@@ -30,6 +30,12 @@ public class Problem2 {
         }
 
     }
+
+    private static String[] deleteDuplicatedChar(String cryptogram, int c1, int depth) {
+        cryptogram = cryptogram.replace(cryptogram.substring(c1, c1 + depth + 1), "");
+        String[] str = {cryptogram, String.valueOf(c1)};
+        return str;
+    }
 }
 
 
