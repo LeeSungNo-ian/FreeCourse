@@ -119,4 +119,14 @@ public class Problem7 {
             return Objects.hash(id);
         }
     }
+
+    static class Recommendation {
+        Id id;
+        int score;
+
+        public Recommendation(Id id, int score) {
+            this.id = id;
+            this.score = score;
+        }
+    }
 }
