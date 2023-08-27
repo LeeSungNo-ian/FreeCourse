@@ -16,6 +16,11 @@ public class Problem4 {
         put("Y", "B"); put("Z", "A");
     }};
 
+    public static String solution(String word) {
+        if (!verifySize(word)) throw new RuntimeException("word의 길이는 1이상 1,000이하여야 합니다.");
+        return translateWord(word);
+    }
+
     private static boolean verifySize(String word) {
         return 1 <= word.length() && word.length() <= 1000;
     }
@@ -24,7 +29,6 @@ public class Problem4 {
         String result = "";
         for (int i = 0; i < word.length(); i++) {
             String originChar = String.valueOf(word.charAt(i));
-
             if (verifyChar(originChar)) {
                 String reversedChar = dict.get(originChar.toUpperCase());
 
