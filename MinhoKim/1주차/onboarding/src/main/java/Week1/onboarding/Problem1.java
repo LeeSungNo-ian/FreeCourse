@@ -6,7 +6,7 @@ class Problem1 {
     static Validation validation= new Validation();
     static PlayGame playGame = new PlayGame();
 
-    public int solution(List<Integer> Crong, List<Integer> Pobi){
+    public static int solution(List<Integer> Crong, List<Integer> Pobi){
         if(validation.check(Crong) && validation.check(Pobi)){
             return playGame.battle(Crong, Pobi);
         }else{
