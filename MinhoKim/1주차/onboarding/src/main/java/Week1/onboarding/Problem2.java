@@ -1,6 +1,7 @@
 package Week1.onboarding;
 
-import java.util.LinkedHashSet;
+import java.util.Stack;
+import java.util.stream.Collectors;
 
 public class Problem2 {
 
@@ -20,21 +21,24 @@ public class Problem2 {
         }
     }
 
-
     static class Code{
-        public String decode(String cryptogram){
-            LinkedHashSet<Character> charSet = new LinkedHashSet<>();
+        public static String decode(String cryptogram){
+            Stack<Character> stack = new Stack<>();
 
-            for(int i=0; i<cryptogram.length(); i++){
-                charSet.add(cryptogram.charAt(i));
+            int index = 0;
+            while (index < cryptogram.length()) {
+                if (stack.isEmpty() || !stack.peek().equals(cryptogram.charAt(index))) {
+                    stack.push(cryptogram.charAt(index));
+                    ++index;
+                    continue;
+                }
+                while (index < cryptogram.length() && stack.peek().equals(cryptogram.charAt(index))) {
+                    ++index;
+                }
+                stack.pop();
             }
 
-            StringBuilder result = new StringBuilder();
-            for(Character c : charSet){
-                result.append(c);
-            }
-
-            return result.toString();
+            return stack.stream().map(Object::toString).collect(Collectors.joining());
         }
     }
 }
