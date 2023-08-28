@@ -13,6 +13,9 @@ public class Problem4 {
         return EXCEPTION;
     }
 
+    /**
+     * 예외처리 클래스
+     */
     static class Except {
         public static final int MIN_LENGTH = 1;
         public static final int MAX_LENGTH = 1000;
@@ -23,11 +26,16 @@ public class Problem4 {
         }
     }
 
+    /**
+     * 알파벳 변환 클래스
+     */
     static class Convert {
         public static final int LOWER_ALPHABET = 0;
         public static final int UPPER_ALPHABET = 1;
         public static final int NO_ALPHABET = -1;
-
+        /*
+         * 알파벳이 아니면 그대로, 대문자면 대문자 반대로, 소문자면 소문자 반대로 변환해주는 메소드
+         */
         public static String makeWord(String word) {
             StringBuilder newWord = new StringBuilder();
 
@@ -45,6 +53,9 @@ public class Problem4 {
 
             return newWord.toString();
         }
+        /*
+         * 소문자 or 대문자 or 알파벳 아님 상태를 알려주는 메소드
+         */
         public static int lowerOrUpper(char c) {
             if(c >= 'a' && c <= 'z')
                 return LOWER_ALPHABET;
@@ -53,11 +64,15 @@ public class Problem4 {
             return NO_ALPHABET;
 
         }
-
+        /*
+         * 소문자 단어 변환 메소드
+         */
         public static char lowerConvert(char c) {
             return (char)('z' - (c - 'a'));
         }
-
+        /*
+         * 대문자 단어 변환 메소드
+         */
         public static char upperConvert(char c) {
             return (char)('Z' - (c - 'A'));
         }
