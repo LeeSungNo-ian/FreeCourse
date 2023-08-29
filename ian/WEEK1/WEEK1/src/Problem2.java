@@ -2,7 +2,7 @@ import java.util.Stack;
 import java.util.Scanner;
 
 public class Problem2 {
-    static public String solution(String cryptogram) {
+    public static String removeDuplicates(String cryptogram) {
         Stack<Character> stack = new Stack<>();
         for (char ch: cryptogram.toCharArray()) {
             if (!stack.isEmpty() && stack.peek() == ch) {
@@ -11,7 +11,10 @@ public class Problem2 {
                 stack.push(ch);
             }
         }
+        return stackToString(stack);
+    }
 
+    public static String stackToString(Stack<Character> stack) {
         StringBuilder result = new StringBuilder();
         for (char ch: stack) {
             result.append(ch);
@@ -23,6 +26,6 @@ public class Problem2 {
         Scanner sc = new Scanner(System.in);
         String cryptogram = sc.nextLine();
 
-        System.out.println(solution(cryptogram));
+        System.out.println(removeDuplicates(cryptogram));
     }
 }
