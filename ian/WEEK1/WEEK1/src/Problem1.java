@@ -30,21 +30,29 @@ public class Problem1 {
         }
     }
 
-    static class Result {
-        static final int POBI_WIN = 1;
-        static final int CRONG_WIN = 2;
-        static final int DRAW = 0;
-        static final int EXCEPTION = -1;
+    enum ResultValue {
+        POBI_WIN(1), CRONG_WIN(2), DRAW(0), EXCEPTION(-1);
+        final private int value;
 
+        ResultValue(int value) {
+            this.value = value;
+        }
+
+        int getDay() {
+            return value;
+        }
+    }
+
+    static class Result {
         public static int resultPobiCrongValues(int pobiValue, int crongValue) {
             if (pobiValue > crongValue) {
-                return POBI_WIN;
+                return ResultValue.POBI_WIN.value;
             } else if (pobiValue < crongValue) {
-                return CRONG_WIN;
+                return ResultValue.CRONG_WIN.value;
             } else if (pobiValue == crongValue) {
-                return DRAW;
+                return ResultValue.DRAW.value;
             } else {
-                return EXCEPTION;
+                return ResultValue.EXCEPTION.value;
             }
         }
     }
