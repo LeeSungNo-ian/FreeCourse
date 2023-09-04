@@ -27,4 +27,21 @@ public class Referee {
         }
         return strikeNumber;
     }
+
+    public static int countBallNumber(Set<Integer> computerBalls, Set<Integer> playerBalls) {
+        int ballNumber = 0;
+        for (int index = 0; index < computerBalls.size(); index++) {
+            List<Integer> computerBall = new ArrayList<Integer>(computerBalls);
+            List<Integer> playerBall = new ArrayList<Integer>(playerBalls);
+
+            if (!computerBall.contains(playerBall.get(index))) {
+                continue;
+            }
+
+            if (computerBall.get(index) != playerBall.get(index)) {
+                ballNumber++;
+            }
+        }
+        return ballNumber;
+    }
 }
