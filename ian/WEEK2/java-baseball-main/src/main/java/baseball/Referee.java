@@ -6,10 +6,11 @@ import java.util.List;
 import java.util.Set;
 
 public class Referee {
-    public static void judgeValue(Set<Integer> computerBalls, Set<Integer> playerBalls) {
+    public static String judgeValue(Set<Integer> computerBalls, Set<Integer> playerBalls) {
         String gameResult = "";
         if (isNothing(computerBalls, playerBalls)) {
             gameResult = "낫싱";
+            return gameResult;
         }
 
         int strikeNumber = countStrikeNumber(computerBalls, playerBalls);
@@ -22,6 +23,8 @@ public class Referee {
         if (strikeNumber > 0) {
             gameResult += strikeNumber + "스트라이크";
         }
+
+        return gameResult;
     }
 
     public static boolean isNothing(Set<Integer> computerBalls, Set<Integer> playerBalls) {
