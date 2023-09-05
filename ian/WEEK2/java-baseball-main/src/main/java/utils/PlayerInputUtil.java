@@ -6,12 +6,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PlayerInputUtil {
-    public static void perceiveBallNumber() {
+    public static String perceiveBallNumber() {
         String ballNumber = Console.readLine();
         checkAboveThreeCount(ballNumber);
         checkBelowThreeCount(ballNumber);
         checkNumberValidityAndRange(ballNumber);
         checkContainSameNumer(ballNumber);
+        return ballNumber;
     }
 
     public static void checkAboveThreeCount(String balls) {

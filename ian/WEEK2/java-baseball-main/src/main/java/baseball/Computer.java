@@ -8,7 +8,7 @@ import java.util.Set;
 public class Computer {
     static Set<Integer> computerBall = new LinkedHashSet<>();
 
-    public static void throwThreeUniqueBalls() {
+    public void throwThreeUniqueBalls() {
         initComputerBall();
         while (computerBall.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -18,7 +18,7 @@ public class Computer {
         }
     }
 
-    private static void initComputerBall() {
+    private void initComputerBall() {
         computerBall.clear();
     }
 
