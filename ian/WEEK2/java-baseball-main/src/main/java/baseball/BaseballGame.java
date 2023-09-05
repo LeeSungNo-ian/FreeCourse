@@ -1,8 +1,10 @@
 package baseball;
 
+import utils.PlayerGameRestartUtil;
+
 import java.util.Set;
 import static utils.PlayerInputUtil.perceiveBallNumber;
-import camp.nextstep.edu.missionutils.Console;
+import static utils.PlayerGameRestartUtil.gameRestartQuestion;
 
 public class BaseballGame {
     private Computer computer = new Computer();
@@ -25,6 +27,8 @@ public class BaseballGame {
 
         String gameResult = referee.judgeValue(computerBalls, playerBalls);
         System.out.println(gameResult);
+
+        gameRestartQuestion();
     }
 }
 
