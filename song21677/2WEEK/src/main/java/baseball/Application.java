@@ -1,38 +1,8 @@
 package baseball;
 
-import baseball.domain.Balls;
-import baseball.domain.Computer;
-import baseball.domain.Result;
-import camp.nextstep.edu.missionutils.Console;
-
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
-        System.out.println("숫자 야구 게임을 시작합니다.");
-
-        Computer computer = new Computer();
-
-        while (true) {
-            System.out.print("숫자를 입력해주세요: ");
-            Balls inputBalls = new Balls(Console.readLine());
-
-            Result result = computer.calculate(inputBalls);
-
-            if (result.strikeNum != 3) {
-                System.out.println(result);
-                continue;
-            }
-
-            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
-
-            System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-
-            String option = Console.readLine();
-            if (option.equals("1")) {
-                main(new String[]{});
-            } else if (option.equals("2")) {
-                break;
-            }
-        }
+        GameController gameController = new GameController();
+        gameController.startGame();
     }
 }
