@@ -11,7 +11,7 @@ class Problem1 {
 
         if (pobiMax == crongMax) return 0;
         else if (pobiMax > crongMax) return 1;
-        else return 2;
+        return 2;
     }
 
     public static boolean verifyInput(List<Integer> pobi, List<Integer> crong) {
