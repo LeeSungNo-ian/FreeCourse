@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\1513\Desktop\프리코스 스터디\.metadata\.plugins\org.eclipse.jdt.core
+631908365.index
+3047646218.index
+2565356412.index
+907009504.index
