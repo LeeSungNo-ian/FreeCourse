@@ -1,36 +1,30 @@
 package baseball;
 
 public class BaseballGameLogic {
-
     private int[] computerNumbers;
     private int attempts;
 
     public BaseballGameLogic() {
-        computerNumbers = RandomNumberGenerator.generateRandomNumbers(); // RandomNumberGenerator에서 난수 생성
+        computerNumbers = RandomNumberGenerator.generateRandomNumbers();
         attempts = 0;
     }
 
     public void playGame() {
-        int[] userNumbers;
         boolean gameWon = false;
-
         while (!gameWon) {
-            userNumbers = InputValidator.getUserInput(); // 사용자 입력 받기
-            int[] result = checkNumbers(userNumbers); // 입력 숫자 체크
-            printResult(result); // 결과 출력
-
-            if (result[0] == 0 && result[1] == 3) { // 3스트라이크로 변경
+            int[] userNumbers = InputValidator.getUserInput();
+            int[] result = checkNumbers(userNumbers);
+            printResult(result);
+            if (result[0] == 0 && result[1] == 3) {
                 gameWon = true;
                 System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
             }
-
             attempts++;
         }
     }
 
     private int[] checkNumbers(int[] userNumbers) {
-        int[] result = new int[2]; // result[0]는 볼의 개수, result[1]는 스트라이크의 개수
-
+        int[] result = new int[2];
         for (int i = 0; i < 3; i++) {
             if (computerNumbers[i] == userNumbers[i]) {
                 result[1]++;
@@ -38,7 +32,6 @@ public class BaseballGameLogic {
                 result[0]++;
             }
         }
-
         return result;
     }
 
@@ -65,5 +58,4 @@ public class BaseballGameLogic {
             System.out.println(output.toString());
         }
     }
-
 }
