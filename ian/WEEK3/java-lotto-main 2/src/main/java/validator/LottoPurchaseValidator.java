@@ -1,6 +1,14 @@
 package validator;
 
 public class LottoPurchaseValidator {
+    int validPurchasAmount(String purchaseAmount) {
+        vaildIntegerPurchasAmout(purchaseAmount);
+        int purchaseAmountPrice = Integer.parseInt(purchaseAmount);
+        validMinimumPurchaseAmount(purchaseAmountPrice);
+        validPurchaseDivideUp1000(purchaseAmountPrice);
+
+        return purchaseAmountPrice;
+    }
 
     void vaildIntegerPurchasAmout(String input) {
         String regex = "[+-]?\\d*(\\.\\d+)?";
