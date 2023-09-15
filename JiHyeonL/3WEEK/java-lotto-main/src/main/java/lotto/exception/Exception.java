@@ -1,11 +1,12 @@
 package lotto.exception;
 
+import lotto.dto.InputDTO;
 import lotto.service.Info;
 
 import java.util.List;
 
 /**
- * 입력 예외처리 클래스: 이곳에서 에러가 발생하지 않아야 일급 컬렉션에 데이터를 저장할 수 있다.
+ * 입력 예외처리 클래스: 이곳에서 에러가 발생하지 않아야 domain 엔티티로 데이터를 이동할 수 있다.
  */
 public class Exception {
     /*
@@ -19,7 +20,7 @@ public class Exception {
      * 당첨 번호 예외처리 메소드를 모두 실행
      */
     public void isAnswerValid(List<String> input) {
-        isAnswerCountSixAndValidSplit(input);   // 번호가 6개인지 체크
+        isAnswerValidCountAndValidSplit(input);   // 번호가 6개인지 체크
         isNumbersNotSame(input);    // 번호 중 중복이 있는지 체크
         for (String str : input) {
             isStringNumber(str);    // 번호가 숫자인지 체크
@@ -51,7 +52,7 @@ public class Exception {
     /*
      * 당첨 번호가 6개인지 체크
      */
-    private void isAnswerCountSixAndValidSplit(List<String> numbers) {
+    private void isAnswerValidCountAndValidSplit(List<String> numbers) {
         if (numbers.size() != Info.COUNT_NUMBERS.getValue())
             throw new IllegalArgumentException("[ERROR] 입력하신 로또 번호 개수가 " + Info.COUNT_NUMBERS.getValue() + "가 아닙니다.");
     }
