@@ -38,19 +38,4 @@ public class UserInput {
     public List<String> splitStringToList(String input) {
         return Arrays.asList(input.split(","));
     }
-    /*
-     * String List를 Integer List로 변환 -> dto 용도
-     */
-    public List<Integer> convertStringListToIntList(List<String> numbers) {
-        List<Integer> integerList = new ArrayList<>();
-        for (String str : numbers)
-            integerList.add(convertStringToInt(str));
-        return integerList;
-    }
-    /*
-     * String을 int로 변환 -> dto 용도
-     */
-    public int convertStringToInt(String number) {
-        return Integer.parseInt(number);
-    }
 }
