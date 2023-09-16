@@ -1,6 +1,7 @@
 package lotto.view;
 
 import lotto.domain.RandomLotto;
+import lotto.service.Info;
 import lotto.service.Rank;
 
 import java.util.Collection;
@@ -22,12 +23,11 @@ public class OutputView {
      * 당첨 통계를 출력하는 메소드 using Rank enum
      */
     public void printResultAnalysis(List<Integer> countList) {
-        Collections.reverse(countList);
 
         System.out.println("당첨 통계");
         System.out.println("---");
 
-        int i = countList.size()-1;
+        int i = countList.size() - 1;
         for (String description : Rank.getDescriptionList()) {
             System.out.println(description + countList.get(i) + "개");
             i--;
@@ -37,6 +37,6 @@ public class OutputView {
      * 수익률 출력
      */
     public void printWinRateLotto(float winRate) {
-        System.out.println("총 수익률은 " + String.format("%2f",winRate) + "%입니다.");
+        System.out.println("총 수익률은 " + String.format("%.1f",winRate) + "%입니다.");
     }
 }
