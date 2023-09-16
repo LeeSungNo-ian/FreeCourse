@@ -1,38 +1,49 @@
 package lotto.exception;
 
-import lotto.dto.InputDTO;
 import lotto.service.Info;
 
 import java.util.List;
 
 /**
- * 입력 예외처리 클래스: 이곳에서 에러가 발생하지 않아야 domain 엔티티로 데이터를 이동할 수 있다.
+ * 입력 예외처리 클래스
  */
 public class Exception {
     /*
+     * int로 변환 가능한지 체크
+     */
+    public void isCanConvertInt(String input) {
+        isStringNumber(input);  // 숫자 체크
+    }
+    /*
+     * List<String>이 List<Integer>로 변환 가능한지 체크
+     */
+    public void isConConvertIntList(List<String> input) {
+        for (String str : input) {
+            isStringNumber(str);    // 번호가 숫자인지 체크
+        }
+    }
+
+    /*
      * 로또 구입 금액 예외처리 메소드를 모두 실행
      */
-    public void isCostValid(String input) {
-        isStringNumber(input);  // 숫자 체크
-        isCostDividedUnit(Integer.parseInt(input));   // 숫자이면 1000으로 나누어 떨어지는지 체크
+    public void isCostValid(int input) {
+        isCostDividedUnit(input);   // 숫자이면 1000으로 나누어 떨어지는지 체크
     }
     /*
      * 당첨 번호 예외처리 메소드를 모두 실행
      */
-    public void isAnswerValid(List<String> input) {
+    public void isAnswerValid(List<Integer> input) {
         isAnswerValidCountAndValidSplit(input);   // 번호가 6개인지 체크
         isNumbersNotSame(input);    // 번호 중 중복이 있는지 체크
-        for (String str : input) {
-            isStringNumber(str);    // 번호가 숫자인지 체크
-            isNumberInRange(Integer.parseInt(str));   // 숫자이면 번호 범위 체크
+        for (int number : input) {
+            isNumberInRange(number);   // 번호 범위 체크
         }
     }
     /*
      * 보너스 번호 예외처리 메소드를 모두 실행
      */
-    public void isBonusValid(String input) {
-        isStringNumber(input);   // 문자열 숫자인지 체크
-        isNumberInRange(Integer.parseInt(input));  // 숫자이면 번호 범위 체크
+    public void isBonusValid(int input) {
+        isNumberInRange(input);  // 번호 범위 체크
     }
 
     /*
@@ -52,14 +63,14 @@ public class Exception {
     /*
      * 당첨 번호가 6개인지 체크
      */
-    private void isAnswerValidCountAndValidSplit(List<String> numbers) {
+    private void isAnswerValidCountAndValidSplit(List<Integer> numbers) {
         if (numbers.size() != Info.COUNT_NUMBERS.getValue())
             throw new IllegalArgumentException("[ERROR] 입력하신 로또 번호 개수가 " + Info.COUNT_NUMBERS.getValue() + "가 아닙니다.");
     }
     /*
      * 중복 숫자가 존재하는지 체크
      */
-    private void isNumbersNotSame(List<String> numbers) {
+    private void isNumbersNotSame(List<Integer> numbers) {
         for (int i = 0; i < numbers.size(); i++)
             if (numbers.indexOf(numbers.get(i)) != numbers.lastIndexOf(numbers.get(i)))
                 throw new IllegalArgumentException("[ERROR] 중복 번호가 존재합니다.");
