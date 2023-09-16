@@ -1,8 +1,5 @@
 package lotto.service;
 
-import lotto.domain.RandomLotto;
-
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,18 +21,19 @@ public class Calculate {
             if (bonus == number)
                 bonusCount = 1;
         }
+
         return Rank.getCountToRank(count,bonusCount); // count를 등수 인덱스로 변환 후 리턴
     }
     /*
      * 수익률 계산한 뒤 문자열로 반환하는 메소드
      */
-    public float winRateFormat(List<Integer> countList, int cost) {
-        int totalProfit = 0;
-        Collections.reverse(countList);
+    public float winRateFormat(List<Integer> rankList, int cost) {
+        float totalProfit = 0;
 
-        for(int count : countList) {
-            totalProfit += count * Rank.getRankList().get(count);
+        for(int i = 0; i < rankList.size(); i++) {
+            totalProfit += rankList.get(i) * Rank.getRankList().get(i);
         }
+
         return (totalProfit / cost) * 100f;
     }
 
