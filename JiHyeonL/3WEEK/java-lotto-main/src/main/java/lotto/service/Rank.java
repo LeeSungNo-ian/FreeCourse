@@ -28,7 +28,7 @@ public enum Rank {
      * Rank enum value 리스트 반환
      */
     public static List<Integer> getRankList() {
-        return List.of(FIFTH_PRIZE.value, FOURTH_PRIZE.value, THIRD_PRIZE.value, SECOND_PRIZE.value, FIRST_PRIZE.value);
+        return List.of(FIRST_PRIZE.value, SECOND_PRIZE.value, THIRD_PRIZE.value, FOURTH_PRIZE.value, FIFTH_PRIZE.value);
     }
     /*
      * 일치한 번호 count -> 순위-1 반환, count == 0이면 -1 반환
