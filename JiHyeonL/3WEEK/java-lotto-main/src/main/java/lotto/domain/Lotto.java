@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import lotto.exception.Exception;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,13 @@ public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
+        validate(numbers);
         this.numbers = numbers;
+    }
+
+    private void validate(List<Integer> numbers) {
+        Exception exception = new Exception();
+        exception.isAnswerValid(numbers);
     }
 
     public List<Integer> getLotto() {
