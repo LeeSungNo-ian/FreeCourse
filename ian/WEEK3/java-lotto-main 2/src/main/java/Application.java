@@ -1,10 +1,8 @@
-import static util.RandomNumberGeneratorUtil.randomNumbersGenerate;
-import static view.InputView.readLottoPurchaseValidator;
-
+import controller.LottoGameController;
 
 public class Application {
     public static void main(String[] args) {
-        readLottoPurchaseValidator();
-        randomNumbersGenerate();
+        LottoGameController lottoGameController = new LottoGameController();
+        lottoGameController.gameProgress();
     }
 }
