@@ -1,12 +1,11 @@
 package controller;
 
-import static view.InputView.readLottoPurchaseValidator;
-import controller.LottoCreateController;
+import static view.LottoPurchasePriceInputView.readLottoPurchasePrice;
 
 public class LottoGameController {
     LottoCreateController lottoCreateController = new LottoCreateController();
     public void gameProgress() {
-        int a = readLottoPurchaseValidator();
+        int a = readLottoPurchasePrice();
         lottoCreateController.createLotto(a);
     }
 }

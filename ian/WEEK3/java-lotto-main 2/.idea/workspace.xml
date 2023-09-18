@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34347c0b-4110-40b8-875d-01bf920429bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/validator/LottoPurchaseValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validator/LottoPurchaseValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validator/RandomNumberGeneratorValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validator/RandomNumberGeneratorValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LottoCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LottoCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LottoGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LottoGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/InputView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LottoPurchasePriceInputView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

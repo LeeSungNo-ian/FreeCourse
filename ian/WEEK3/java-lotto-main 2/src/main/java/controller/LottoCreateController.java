@@ -1,15 +1,13 @@
 package controller;
 
-import model.Lotto;
-import util.RandomNumberGeneratorUtil;
-import view.InputView;
+import view.LottoPurchasePriceInputView;
 
 import static util.RandomNumberGeneratorUtil.randomNumbersGenerate;
 
 public class LottoCreateController {
     public void createLotto(int price) {
         long totalLottoCount = countTotalLotto(price);
-        InputView inputLotto = new InputView();
+        LottoPurchasePriceInputView inputLotto = new LottoPurchasePriceInputView();
         System.out.println(totalLottoCount + "개를 구매했습니다.");
 
         for (int count = 0; count < totalLottoCount; count++) {
