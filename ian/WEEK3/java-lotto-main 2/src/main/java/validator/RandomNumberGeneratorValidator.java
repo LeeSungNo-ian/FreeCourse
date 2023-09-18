@@ -11,7 +11,7 @@ public class RandomNumberGeneratorValidator {
         vaildRandomNumberDuplication(numbers);
     }
 
-    void vaildRandomNumberRange(List<Integer> randomNumbers) {
+    private void vaildRandomNumberRange(List<Integer> randomNumbers) {
         for (int randomNumber: randomNumbers) {
             if (randomNumber < 1) {
                 throw new IllegalArgumentException("[ERROR] 난수 생성 시 최소값(1) 보다 작은 값이 있습니다.");
@@ -22,13 +22,13 @@ public class RandomNumberGeneratorValidator {
         }
     }
 
-    void vaildRandomNumberSize(List<Integer> randomNumbers) {
+    private void vaildRandomNumberSize(List<Integer> randomNumbers) {
         if (randomNumbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 난수가 6개로 생성되지 않았습니다.");
         }
     }
 
-    void vaildRandomNumberDuplication(List<Integer> randomNumbers) {
+    private void vaildRandomNumberDuplication(List<Integer> randomNumbers) {
         Set<Integer> uniqueNumbers = new HashSet<>(randomNumbers);
         if (uniqueNumbers.size() != randomNumbers.size()) {
             throw new IllegalArgumentException("[ERROR] 난수 중 중복된 값이 있습니다.");
