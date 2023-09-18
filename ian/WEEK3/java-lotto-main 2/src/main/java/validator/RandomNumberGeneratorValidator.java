@@ -5,6 +5,7 @@ import java.util.List;
 public class RandomNumberGeneratorValidator {
     public void vaildRandomNumbers(List<Integer> numbers) {
         vaildRandomNumberRange(numbers);
+        vaildRandomNumberSize(numbers);
     }
 
     void vaildRandomNumberRange(List<Integer> randomNumbers) {
@@ -16,6 +17,12 @@ public class RandomNumberGeneratorValidator {
             if (randomNumber > 46) {
                 throw new IllegalArgumentException("[ERROR] 난수 생성 시 최대값(45) 보다 큰 값이 있습니다.");
             }
+        }
+    }
+
+    void vaildRandomNumberSize(List<Integer> randomNumbers) {
+        if (randomNumbers.size() != 6) {
+            throw new IllegalArgumentException("[ERROR] 난수가 6개로 생성되지 않았습니다.");
         }
     }
 }
