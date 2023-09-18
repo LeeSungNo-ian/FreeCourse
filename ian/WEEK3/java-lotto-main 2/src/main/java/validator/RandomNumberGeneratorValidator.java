@@ -12,7 +12,6 @@ public class RandomNumberGeneratorValidator {
     }
 
     void vaildRandomNumberRange(List<Integer> randomNumbers) {
-        System.out.println(randomNumbers + "👀");
         for (int randomNumber: randomNumbers) {
             if (randomNumber < 1) {
                 throw new IllegalArgumentException("[ERROR] 난수 생성 시 최소값(1) 보다 작은 값이 있습니다.");
