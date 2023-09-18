@@ -1,9 +1,10 @@
-import validator.LottoPurchaseValidator;
+import static util.RandomNumberGeneratorUtil.randomNumbersGenerate;
+import static view.InputView.readLottoPurchaseValidator;
 
-import static view.inputView.readLottoPurchaseValidator;
 
 public class Application {
     public static void main(String[] args) {
         readLottoPurchaseValidator();
+        randomNumbersGenerate();
     }
 }

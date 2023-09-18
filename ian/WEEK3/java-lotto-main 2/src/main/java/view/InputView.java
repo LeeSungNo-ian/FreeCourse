@@ -3,7 +3,7 @@ package view;
 import camp.nextstep.edu.missionutils.Console;
 import validator.LottoPurchaseValidator;
 
-public class inputView {
+public class InputView {
     static LottoPurchaseValidator lottoPurchaseValidator = new LottoPurchaseValidator();
 
     public static void readLottoPurchaseValidator() {
