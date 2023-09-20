@@ -3,6 +3,12 @@ package validator;
 import java.util.List;
 
 public class BonusNumberGeneratorValidator {
+    public void vaildBonusNumber(String bonusNumber) {
+        vaildBonusNumberNonNumeric(bonusNumber);
+        int bonusNumberValue = Integer.parseInt(bonusNumber);
+        vaildBonusNumberNonNumeric(bonusNumber);
+    }
+
     private void vaildBonusNumberNonNumeric(String input) {
         String regex = "[+-]?\\d*(\\.\\d+)?";
         if (!input.matches(regex)) {
