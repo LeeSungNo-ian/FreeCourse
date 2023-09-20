@@ -13,7 +13,6 @@ public class LottoPurchaseValidator {
     private void vaildPurchaseAmountNonNumeric(String purchaseAmount) {
         try {
             int number = Integer.parseInt(purchaseAmount);
-            boolean isTrue = (number != 0);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 로또 구입 금액에는 숫자만 입력해주세요.");
         }
