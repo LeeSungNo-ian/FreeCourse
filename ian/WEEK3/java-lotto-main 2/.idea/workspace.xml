@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34347c0b-4110-40b8-875d-01bf920429bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LottoCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LottoCreateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/LottoWinningNumberInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/LottoGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/LottoGameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/LottoGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LottoGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/InputView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LottoPurchasePriceInputView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/RandomNumberGeneratorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RandomNumberGeneratorUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +71,17 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "WEEK3__이성노__",
     "last_opened_file_path": "/Users/ian.lee/Desktop/DevIan/FreeCourse/ian/WEEK3/java-lotto-main 2",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Application (1)">
-    <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Application (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="java-lotto.main" />
+      <option name="PROGRAM_PARAMETERS" value="illegal-access=warn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,7 +101,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>

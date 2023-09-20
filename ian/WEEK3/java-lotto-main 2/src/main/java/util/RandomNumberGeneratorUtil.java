@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class RandomNumberGeneratorUtil {
-    static RandomNumberGeneratorValidator randomNumberGeneratorValidator = new RandomNumberGeneratorValidator();
+    public static RandomNumberGeneratorValidator randomNumberGeneratorValidator = new RandomNumberGeneratorValidator();
 
     public static List<Integer> randomNumbersGenerate() {
         List<Integer> randomNumbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
