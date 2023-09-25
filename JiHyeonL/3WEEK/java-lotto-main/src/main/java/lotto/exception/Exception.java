@@ -2,6 +2,7 @@ package lotto.exception;
 
 import lotto.service.Info;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -81,6 +82,13 @@ public class Exception {
     private void isNumberInRange(int number) {
         if (number < Info.START_NUMBER.getValue() || number > Info.END_NUMBER.getValue())
             throw new IllegalArgumentException("[ERROR] 입력하신 번호 중 " + Info.START_NUMBER.getValue() + " ~ " + Info.END_NUMBER.getValue() + " 범위가 아닌 숫자가 존재합니다.");
+    }
+    /*
+     * 로또 당첨 번호와 보너스 번호가 다른지 체크
+     */
+    private void isNotSameAnswerAndBonus(List<Integer> answer, int bonus) {
+        if (answer.contains(bonus))
+            throw new IllegalArgumentException("[ERROR] 입력하신 보너스 번호와 같은 당첨 번호가 존재합니다.");
     }
 
 }
