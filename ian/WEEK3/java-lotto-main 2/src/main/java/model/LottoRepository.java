@@ -47,7 +47,7 @@ public class LottoRepository {
         return lottoResult;
     }
 
-    int printSameNumberCount(List<Integer> lottoNumbers, List<Integer> winningNumbers) {
+    private int printSameNumberCount(List<Integer> lottoNumbers, List<Integer> winningNumbers) {
         int sameNumberCount = 0;
         for (int lottoNumber: lottoNumbers) {
             if (winningNumbers.contains(lottoNumber)) {
@@ -57,7 +57,7 @@ public class LottoRepository {
         return sameNumberCount;
     }
 
-    int getRank(int sameNumberCount) {
+    private int getRank(int sameNumberCount) {
         if (sameNumberCount == 6) {
             return RANK_FIRST;
         }
@@ -73,7 +73,7 @@ public class LottoRepository {
         return RANK_NONE;
     }
 
-    boolean isMatchBonusNumber(List<Integer> lottoNumbers, int bonusNumber) {
+    private boolean isMatchBonusNumber(List<Integer> lottoNumbers, int bonusNumber) {
         return (lottoNumbers.contains(bonusNumber));
     }
 }
