@@ -38,6 +38,9 @@ public class LottoRepository {
             if (rank == -1) {
                 continue;
             }
+            if (rank == RANK_THIRD && isMatchBonusNumber(lottoNumbers, bonusNumber)) {
+                rank = RANK_SECOND;
+            }
             lottoResult.put(rank, lottoResult.getOrDefault(rank, 0) + 1);
         }
         System.out.println(lottoResult);
@@ -68,5 +71,9 @@ public class LottoRepository {
             return RANK_FIFTH;
         }
         return RANK_NONE;
+    }
+
+    boolean isMatchBonusNumber(List<Integer> lottoNumbers, int bonusNumber) {
+        return (lottoNumbers.contains(bonusNumber));
     }
 }

@@ -13,7 +13,6 @@ import static util.RandomNumberGeneratorUtil.randomNumbersGenerate;
 import static view.LottoPurchasePriceInputView.readLottoPurchasePrice;
 
 public class LottoGameController {
-    LottoCreateController lottoCreateController = new LottoCreateController();
     LottoWinningNumberInput lottoWinningNumberInput = new LottoWinningNumberInput();
     LottoBonusNumberInput lottoBonusNumberInput = new LottoBonusNumberInput();
     LottoRepository lottoRepository = new LottoRepository();
