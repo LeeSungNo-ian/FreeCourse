@@ -25,7 +25,7 @@ public class Calculate {
         return Rank.getCountToRank(count,bonusCount); // count를 등수 인덱스로 변환 후 리턴
     }
     /*
-     * 수익률 계산한 뒤 문자열로 반환하는 메소드
+     * 수익률 계산한 값 반환하는 메소드
      */
     public float winRateFormat(List<Integer> rankList, int cost) {
         float totalProfit = 0;
