@@ -1,8 +1,10 @@
 package controller;
 
 import model.Lotto;
+import model.LottoProfitCalculator;
 import model.LottoRepository;
 import view.LottoBonusNumberInput;
+import view.LottoOutputView;
 import view.LottoWinningNumberInput;
 
 import java.util.List;
@@ -16,6 +18,8 @@ public class LottoGameController {
     LottoWinningNumberInput lottoWinningNumberInput = new LottoWinningNumberInput();
     LottoBonusNumberInput lottoBonusNumberInput = new LottoBonusNumberInput();
     LottoRepository lottoRepository = new LottoRepository();
+    LottoOutputView lottoOutputView = new LottoOutputView();
+    LottoProfitCalculator lottoProfitCalculator = new LottoProfitCalculator();
 
     public void gameProgress() {
         int ticketQuantity = readLottoPurchasePrice();
@@ -32,15 +36,9 @@ public class LottoGameController {
         System.out.println(winningNumbers + "❤️");
 
         Map<Integer, Integer> winningDetails = lottoRepository.printLottoResult(winningNumbers, bonusNumberValue);
-        showWinningResult(winningDetails);
-    }
+        lottoOutputView.showWinningResult(winningDetails);
 
-    public void showWinningResult(Map<Integer, Integer> lottoWinningStatistics) {
-        System.out.println("당첨 통계\n---");
-        System.out.println("3개 일치 (5,000원) - " + lottoWinningStatistics.get(RANK_FIFTH) + "개");
-        System.out.println("4개 일치 (50,000원) - " + lottoWinningStatistics.get(RANK_FOURTH) + "개");
-        System.out.println("5개 일치 (1,500,000원) - " + lottoWinningStatistics.get(RANK_THIRD) + "개");
-        System.out.println("5개 일치, 보너스 볼 일치 (30,000,000원) - " + lottoWinningStatistics.get(RANK_SECOND) + "개");
-        System.out.println("6개 일치 (2,000,000,000원) - " + lottoWinningStatistics.get(RANK_FIRST) + "개");
+        double lottoProfit = lottoProfitCalculator.calculateLottoProfit(winningDetails, ticketQuantity);
+        lottoOutputView.showLottoProfit(lottoProfit);
     }
 }
